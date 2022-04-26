@@ -39,15 +39,9 @@ namespace BusinessLogic.Services
             return dbMovie.ToDTO();
         }
 
-        public List<Movie> GetUserMovies(User user)
+        public List<Movie> GetUserMovies(string id)
         {
-            var domainUser = new DomainModels.User()
-            {
-                Email = user.Email,
-                Name = user.Name,
-                UserId=user.UserId,
-            };
-            return _repositoryManager.Movies.GetUserMovies(domainUser).Select(x => new Movie()
+            return _repositoryManager.Movies.GetUserMovies(id).Select(x => new Movie()
             {
                 Name = x.Name,
                 Genre = x.Genre,

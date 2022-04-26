@@ -17,7 +17,7 @@ namespace Movies.Controllers
         }
 
         [HttpGet]
-        [ActionName ("Get All Movies")]
+        [ActionName("Get All Movies")]
         public List<Movie> Get()
         {
             return _moviesService.GetMovies();
@@ -30,11 +30,11 @@ namespace Movies.Controllers
             return _moviesService.AddUserMovie(movie);
         }
 
-        [HttpPost]
+        [HttpGet("{id}")]
         [ActionName("Get User Movies")]
-        public List<Movie> Post([FromBody] User user)
+        public List<Movie> Post(string id)
         {
-            return _moviesService.GetUserMovies(user);
+            return _moviesService.GetUserMovies(id);
         }
     }
 }

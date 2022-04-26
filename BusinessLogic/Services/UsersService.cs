@@ -1,6 +1,7 @@
 ﻿using BusinessLogic.Extensions;
 using BusinessLogic.Interfaces;
 using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -39,7 +40,7 @@ namespace BusinessLogic.Services
 
             if(nameAvailabile == false)
             {
-                return null;
+                throw new Exception("User Name already in use, please choose another");
             }
             else
             {

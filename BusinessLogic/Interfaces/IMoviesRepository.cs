@@ -6,7 +6,7 @@ namespace BusinessLogic.Interfaces
     {
         public List<DomainModels.Movie> GetAll();
         public DomainModels.Movie AddUserMovie(DomainModels.Movie movie);
-        public List<DomainModels.Movie> GetUserMovies(DomainModels.User user);
+        public List<DomainModels.Movie> GetUserMovies(string id);
 
     }
 }

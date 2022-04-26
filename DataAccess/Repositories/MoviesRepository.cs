@@ -29,10 +29,10 @@ namespace DataAccess.Repositories
             Create(movieModel);
             return movieModel.ToDomainModel();
         }
-        public List<Movie> GetUserMovies(User user)
+        public List<Movie> GetUserMovies(string id)
         {
             var movies = FindAll(false).ToList();
-            var moviesSearched = movies.FindAll(u => u.UserId == user.UserId);
+            var moviesSearched = movies.FindAll(u => u.UserId == id);
             var domainMovies = moviesSearched.Select(m => m.ToDomainModel()).ToList();
             return domainMovies;
         }
